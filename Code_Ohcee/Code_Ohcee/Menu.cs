@@ -26,7 +26,7 @@ namespace Code_Ohcee
 
 
 
-        Console.WriteLine("   ___    _                          ");
+            Console.WriteLine("   ___    _                          ");
             Console.WriteLine("  / _ \\  | |__     ___    ___    ___ ");
             Console.WriteLine(" | | | | | '_ \\   / __|  / _ \\  / _ \\");
             Console.WriteLine(" | |_| | | | | | | (__  |  __/ |  __/");
@@ -64,6 +64,11 @@ namespace Code_Ohcee
                 Console.Clear();
                 Character createCharacter = new Character();
                 createCharacter.CreateCharacter(conn);
+
+                Add addCharacter = new Add();
+
+                addCharacter.PassCharacter(createCharacter);
+                addCharacter.AddCharacter(conn);
 
             }
             else if (userSelection == "2")

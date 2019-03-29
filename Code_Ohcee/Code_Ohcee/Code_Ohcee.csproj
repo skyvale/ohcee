@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Add.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="ID.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,18 +11,6 @@ namespace Code_Ohcee
     {
 
 
-        // declare variables
-        public string Name;
-        public string Age;
-        public string Gender;
-        public string Species;
-        public string Fandoms;
-        public string OGDesigner;
-        public string PrevOwner;
-        public DateTime CreatedDate;
-        public string About;
-
-
 
         // validate if user didn't enter anything
         public static string StringEmpty(string userInput, string question)
@@ -125,7 +113,7 @@ namespace Code_Ohcee
 
                 if (comeBack.ToLower() == "yes")
                 {
-                    continue;
+                    Console.WriteLine("\r\nYou can edit your character from the main menu!");
 
                 }
                 else if (comeBack.ToLower() == "no")
@@ -148,7 +136,7 @@ namespace Code_Ohcee
 
 
         // validate if the custom fandom already exists in the system
-        public void fandomCheck(MySqlConnection conn, string userInput)
+        public void FandomCheck(MySqlConnection conn, string userInput)
         {
 
             string stm = "SELECT fandomName FROM fandoms WHERE fandomName = @fandomName";
@@ -167,13 +155,15 @@ namespace Code_Ohcee
 
                 rdr.Close();
 
-                // check
-                Console.WriteLine("\r\nFandom already exists.");
+
             }
             else
             {
-                Add addSpecies = new Add();
-                addSpecies.AddFandom(conn, userInput);
+
+                rdr.Close();
+
+                Add addFandom = new Add();
+                addFandom.AddFandom(conn, userInput);
 
                 // check
                 Console.WriteLine("\r\nAdded new fandom!");
@@ -184,6 +174,9 @@ namespace Code_Ohcee
 
 
         }
+
+
+        
 
     }
 }

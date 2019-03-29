@@ -9,17 +9,19 @@ namespace Code_Ohcee
 {
     class Add
     {
-
-        // variables
-        public string Name;
-        public string Age;
-        public string Gender;
-        public string Species;
+      
+        
         public string Fandoms;
-        public string OGDesigner;
-        public string PrevOwner;
-        public DateTime CreatedDate;
-        public string About;
+        public Character myCharacter;
+
+
+        public void PassCharacter (Character c)
+        {
+            myCharacter = c;
+             
+        }
+
+
 
 
         // adds fandom if it doesn't already exists
@@ -44,17 +46,21 @@ namespace Code_Ohcee
         public void AddCharacter(MySqlConnection conn)
         {
 
-            string stm = "INSERT INTO ocs (name, age, gender, species, about, ogDesigner, prevOwner) " +
-                         "VALUES (@name, @age, @gender, @species, @about, @ogDesigner, @prevOwner)";
+            Console.WriteLine("Inside the add method");
+            string stm = "INSERT INTO ocs (name, age, genderId, speciesId, fandomId, about, ogDesigner, prevOwner, createdDate " +
+                         "VALUES (@name, @age, @genderId, @speciesId, @fandomId, @about, @ogDesigner, @prevOwner, now() )";
+         
+   
 
             MySqlCommand cmd = new MySqlCommand(stm, conn);
-            cmd.Parameters.AddWithValue("@name", Name);
-            cmd.Parameters.AddWithValue("@age", Age);
-            cmd.Parameters.AddWithValue("@gender", Gender);
-            cmd.Parameters.AddWithValue("@species", Species);
-            cmd.Parameters.AddWithValue("@about", About);
-            cmd.Parameters.AddWithValue("@ogDesigner", OGDesigner);
-            cmd.Parameters.AddWithValue("@prevOwner", PrevOwner);
+            cmd.Parameters.AddWithValue("@name", myCharacter.Name);
+            cmd.Parameters.AddWithValue("@age", myCharacter.Age);
+            cmd.Parameters.AddWithValue("@genderId", myCharacter.GenderID);
+            cmd.Parameters.AddWithValue("@speciesId", myCharacter.SpeciesID);
+            cmd.Parameters.AddWithValue("@fandomId", myCharacter.FandomsID);
+            cmd.Parameters.AddWithValue("@about", myCharacter.About);
+            cmd.Parameters.AddWithValue("@ogDesigner", myCharacter.OGDesigner);
+            cmd.Parameters.AddWithValue("@prevOwner", myCharacter.PrevOwner);
   
 
             MySqlDataReader rdr = cmd.ExecuteReader();

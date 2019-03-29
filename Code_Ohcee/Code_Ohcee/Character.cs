@@ -17,19 +17,23 @@ namespace Code_Ohcee
         public string Name;
         public string Age;
         public string Gender;
+        public int GenderID;
         public string Species;
+        public int SpeciesID;
         public string Fandoms;
+        public int FandomsID;
         public string OGDesigner;
         public DateTime CreatedDate;
         public string PrevOwner;
         public string About;
 
 
-
         // this will display the character's information
         public void Display (MySqlConnection conn)
         {
 
+            DateTime createdDate = DateTime.Now;
+            CreatedDate = createdDate;
 
             Console.WriteLine("\r\n-------------------------------\r\n");
             Console.WriteLine("\r\nName: " + Name);
@@ -262,52 +266,96 @@ namespace Code_Ohcee
 
             if (species == "1")
             {
+
                 Species = "Human";
+
+                int human;
+                int.TryParse(species, out human);
+                SpeciesID = human;
 
             }
             else if (species == "2")
             {
                 Species = "Feline";
 
+                int feline;
+                int.TryParse(species, out feline);
+                SpeciesID = feline;
+
             }
             else if (species == "3")
             {
+
                 Species = "Canine";
+
+                int canine;
+                int.TryParse(species, out canine);
+                SpeciesID = canine;
 
             }
             else if (species == "4")
             {
+
                 Species = "Bird";
+
+                int bird;
+                int.TryParse(species, out bird);
+                SpeciesID = bird;
 
             }
             else if (species == "5")
             {
+
                 Species = "Lizard";
+
+                int lizard;
+                int.TryParse(species, out lizard);
+                SpeciesID = lizard;
 
             }
             else if (species == "6")
             {
                 Species = "Aquatic";
 
+                int aquatic;
+                int.TryParse(species, out aquatic);
+                SpeciesID = aquatic;
+
             }
             else if (species == "7")
             {
                 Species = "Dinosaur";
+
+                int dinosaur;
+                int.TryParse(species, out dinosaur);
+                SpeciesID = dinosaur;
 
             }
             else if (species == "8")
             {
                 Species = "Anthro";
 
+                int anthro;
+                int.TryParse(species, out anthro);
+                SpeciesID = anthro;
+
             }
             else if (species == "9")
             {
                 Species = "Mythical";
 
+                int mythical;
+                int.TryParse(species, out mythical);
+                SpeciesID = mythical;
+
             }
             else if (species == "10")
             {
                 Species = "Monster";
+
+                int monster;
+                int.TryParse(species, out monster);
+                SpeciesID = monster;
 
             }
             else if (species == "11")
@@ -318,6 +366,10 @@ namespace Code_Ohcee
 
                 Species = canonSpecies;
 
+                int canonID;
+                int.TryParse(canonSpecies, out canonID);
+                SpeciesID = canonID;
+
             }
             else if (species == "12")
             {
@@ -326,6 +378,10 @@ namespace Code_Ohcee
 
                 Species = ogSpecies;
 
+                int ogID;
+                int.TryParse(ogSpecies, out ogID);
+                SpeciesID = ogID;
+
             }
             else if (species == "13")
             {
@@ -333,6 +389,10 @@ namespace Code_Ohcee
                 string otherSpecies = Validation.StringEmpty(Console.ReadLine(), "\r\nWhat species is your character?");
 
                 Species = otherSpecies;
+
+                int otherID;
+                int.TryParse(otherSpecies, out otherID);
+                SpeciesID = otherID;
 
 
             }
@@ -365,8 +425,11 @@ namespace Code_Ohcee
 
             string fandom = Validation.StringEmpty(Console.ReadLine(), "\r\nWhat fandom are they a part of?");
 
-            Validation doesFandomExist = new Validation();
-            doesFandomExist.fandomCheck(conn, fandom);
+            ID checkID = new ID();
+            checkID.FandomIDFinder(conn, fandom);
+
+            Fandoms = fandom;
+
 
 
 
@@ -395,6 +458,8 @@ namespace Code_Ohcee
 
             string about = Validation.ReturnLater(Console.ReadLine(), "\r\nWho is the original Designer?");
 
+            About = about;
+
 
 
 
@@ -408,9 +473,10 @@ namespace Code_Ohcee
 
             string characterConfirm = Validation.StringEmpty(Console.ReadLine(), "\r\nIf the information is correct, please type 'yes'!");
 
+            Console.WriteLine("right before IF");
             if (characterConfirm.ToLower() == "yes")
             {
-
+                Console.WriteLine("inside the IF");
                 Add addCharacter = new Add();
                 addCharacter.AddCharacter(conn);
 
