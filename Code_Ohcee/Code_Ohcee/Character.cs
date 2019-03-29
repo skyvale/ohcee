@@ -23,9 +23,7 @@ namespace Code_Ohcee
         public DateTime CreatedDate;
         public string PrevOwner;
         public string About;
-        public string cs = @"server=10.63.22.234; userid=skyvale; password=password; database=Ohcee; port=8889";
 
-        MySqlConnection conn = null;
 
 
         // this will display the character's information
@@ -59,9 +57,6 @@ namespace Code_Ohcee
             try
             {
 
-                // Open a connection to MySQL
-                conn = new MySqlConnection(cs);
-                conn.Open();
 
                 // Prompt the user
                 Console.WriteLine("\r\nEnter a name.");
@@ -144,9 +139,6 @@ namespace Code_Ohcee
         public void CreateCharacter(MySqlConnection conn)
         {
 
-            // Open a connection to MySQL
-            conn = new MySqlConnection(cs);
-            conn.Open();
 
             //prompt user for information
             //TODO !! get this top menu to stay after each console.clear()
@@ -362,6 +354,8 @@ namespace Code_Ohcee
                 species = Validation.StringEmpty(Console.ReadLine(), "\r\nPlease choose a number from the menu!");
 
             }
+
+
 
 
             // fandom

@@ -17,9 +17,16 @@ namespace Code_Ohcee
             // clear the console
             Console.Clear();
 
+            // open SQL connection
             MySqlConnection conn = null;
+            string cs = @"server=10.63.22.234; userid=skyvale; password=password; database=Ohcee; port=8889";
 
-            Console.WriteLine("   ___    _                          ");
+            conn = new MySqlConnection(cs);
+            conn.Open();
+
+
+
+        Console.WriteLine("   ___    _                          ");
             Console.WriteLine("  / _ \\  | |__     ___    ___    ___ ");
             Console.WriteLine(" | | | | | '_ \\   / __|  / _ \\  / _ \\");
             Console.WriteLine(" | |_| | | | | | | (__  |  __/ |  __/");
@@ -100,7 +107,6 @@ namespace Code_Ohcee
         // return to main menu (startup)
         public void ReturnToMain()
         {
-            MySqlConnection conn = null;
 
             Console.WriteLine("\r\nWould you like to return to the main menu?");
             Console.WriteLine("[yes]");
@@ -149,7 +155,6 @@ namespace Code_Ohcee
 
             Console.Clear();
 
-            MySqlConnection conn = null;
          
             Console.WriteLine("\r\nOkay! How would you like to search the character?\r\n");
 

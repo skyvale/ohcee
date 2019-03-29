@@ -7,3 +7,12 @@
 \\vmware-host\Shared Folders\Desktop\dvp1-1903-skyvale\Ohcee Project\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.csproj.CopyComplete
 \\vmware-host\Shared Folders\Desktop\dvp1-1903-skyvale\Ohcee Project\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.exe
 \\vmware-host\Shared Folders\Desktop\dvp1-1903-skyvale\Ohcee Project\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.pdb
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\bin\Debug\Code_Ohcee.exe.config
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\bin\Debug\Code_Ohcee.exe
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\bin\Debug\Code_Ohcee.pdb
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\bin\Debug\MySql.Data.dll
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.csproj.CopyComplete
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.exe
+\\vmware-host\Shared Folders\Desktop\ohcee\Code_Ohcee\Code_Ohcee\obj\Debug\Code_Ohcee.pdb

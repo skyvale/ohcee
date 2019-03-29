@@ -21,8 +21,6 @@ namespace Code_Ohcee
         public string PrevOwner;
         public DateTime CreatedDate;
         public string About;
-        public string cs = @"server=10.63.22.234; userid=skyvale; password=password; database=Ohcee; port=8889";
-
 
 
 
