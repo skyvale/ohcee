@@ -69,7 +69,7 @@ namespace Code_Ohcee
             else if (userSelection == "2")
             {
 
-                CharacterMenu();
+                CharacterMenu(conn);
 
 
             }
@@ -150,7 +150,7 @@ namespace Code_Ohcee
 
         // search for a character menu
 
-        public void CharacterMenu()
+        public void CharacterMenu(MySqlConnection conn)
         {
 
             Console.Clear();
@@ -207,7 +207,7 @@ namespace Code_Ohcee
 
                     Console.WriteLine("\r\nPlease choose a number from the menu!");
 
-                    CharacterMenu();
+                    CharacterMenu(conn);
 
                 }
 
