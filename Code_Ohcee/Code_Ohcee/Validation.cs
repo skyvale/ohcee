@@ -165,6 +165,8 @@ namespace Code_Ohcee
 
                 Fandoms = rdr["fandom"].ToString();
 
+                rdr.Close();
+
                 // check
                 Console.WriteLine("\r\nFandom already exists.");
             }
